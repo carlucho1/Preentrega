@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 5</title>
+
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+
+<!-- Encabezado de la página web HEADER -->
+
+<header>
+    <img src="/images/logo.png" alt="Logo de la empresa" height="50px">
+    <h1>Productos de computación y Redes</h1>
+</header>
+
+<!-- Barra de navegación NAV -->
+
+<nav>
+    <!-- Defino una lista desordenada -->
+
+    <ul>
+        <li><a href="/index.html">Inicio</a></li>
+        <li><a href="/html/quienes.html">Quiénes somos</a></li>
+        <li><a href="/html/productos.html">Productos</a></li>
+        <li><a href="/html/contacto.html">Contacto</a></li>
+    </ul>
+
+</nav>
+
+<!-- Cuerpo principal de la página MAIN -->
+
+<main>
+
+    <h2>Formulario de contacto</h2>
+
+    <!-- Los datos se recopilan y se mandan para su procesamiento a formulario.html -->
+
+    <!-- Ahora perfecciono el formulario agregando el atributo required (que obliga sí o sí a completar el campo antes de enviar).  También mejoré el atributo 'tel' con pattern, en donde le digo los números aceptados y cuántos entre {} -->
+
+    <form action="form.html" target="_blank">
+
+        <label for="name">Nombre</label>
+        <input type="text" placeholder="Matías Sebastián" id="name" required><br><br>
+
+        <label for="lastname">Apellido</label>
+        <input type="text" placeholder="Duarte Fernández" id="lastname" required><br><br>
+
+        <label for="email">Email</label>
+        <input type="email" placeholder="ejemplo@gmail.com" id="email" required>
+
+        <label for="pass">Password</label>
+        <input type="password" placeholder="Ingrese su password" id="pass" required><br><br>
+
+        <label for="tel">Teléfono</label>
+        <input type="tel" id="tel" name="tel" pattern="[0-9]{10}" placeholder="10 números sin espacios"  required>
+
+        <!-- <input type="color">
+        <input type="range"> -->
+
+        <label for="date">Fecha</label>
+        <input type="date" name="date" id="date" required><br><br>
+
+        <!-- Vamos con un select ahora. La ventaja que tiene es que acota bien al dato. Como desventaja en value se podría estar enviando un valor forzado aunque se seleccione otro.-->
+
+        <label for="select">Seleccione el sexo</label>
+        <select name="" id="select">
+            <option value="">Masculino</option>
+            <option value="">Femenino</option>
+            <option value="">Binario</option>
+            <option value="">Prefiero no decirlo</option>
+        </select>
+
+        <br><br>
+
+     <!-- Input de tipo checkbox y de tipo radio. En ambos notar la importancia del atributo name. Sobretodo se nota en el input de tipo radio, si no se pone el mismo name a todo, de todos los circulitos no se puede seleccionar uno solo. Siempre hay que agrupar por temática.-->
+
+     <h2>Computadoras</h2>
+
+     <!-- El chequeo de que al menos una opción esté marcada se hará más adelante con javascript -->
+
+     <input type="checkbox" name="marca" id="">DELL
+     <input type="checkbox" name="marca" id="">HP
+     <input type="checkbox" name="marca" id="">LENOVO
+     <input type="checkbox" name="marca" id="">APPLE
+     <input type="checkbox" name="marca" id="">ASUS
+
+     <br><br>
+
+     <!-- Input de tipo radio -->
+
+     <h2>Memorias</h2>
+    
+     <!-- En este caso la verificación con que se indique un único required entre las opciones es suficiente -->
+     <input type="radio" name="memoria" id="" required>4Gb
+     <input type="radio" name="memoria" id="">8Gb
+     <input type="radio" name="memoria" id="">16Gb
+     <input type="radio" name="memoria" id="">32Gb
+     <input type="radio" name="memoria" id="">64Gb
+
+     <br><br>
+        
+        <input type="reset" value="Borrar formulario">
+        <input type="submit" value="Enviar">
+    </form>
+
+
+</main>
+
+
+<!-- Fin de página FOOTER -->
+
+<footer>
+
+    <h2>Seguinos en nuestras redes sociales</h2>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="https://www.instagram.com/" target="_blank"><img src="/images/instagram.png" alt="Instagram" width="30px" height="24px"></a>
+            </li>
+            <li>     
+                <a href="https://www.facebook.com/" target="_blank"><img src="/images/facebook.png" alt="Facebook" width="30px" height="24px"></a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/" target="_blank"><img src="/images/youtube.png" alt="Youtube" width="30px height="24px"></a>
+            </li>
+            <li>
+                <a href="https://x.com/" target="_blank"><img src="/images/x.png" alt="Youtube" width="30px height="24px"></a>
+            </li>
+            <li>
+                <a href="https://www.tiktok.com/discover?lang=es" target="_blank"><img src="/images/tiktok.png" alt="Tik Tok" width="30px" height="24px"></a>
+            </li>
+            <li>
+                <a href="https://www.whatsapp.com/?lang=es_LA" target="_blank"><img src="/images/whatsapp.png" alt="Whatsapp" width="30px" height="24px"></a>
+            </li>
+        </ul>
+    </nav>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3271.6967188287445!2d-57.95258642444402!3d-34.914059722844584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1spc%20store%20computacion!5e0!3m2!1ses!2sar!4v1729566943724!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</footer>
+    
+</body>
+
+</html>
