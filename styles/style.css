@@ -20,13 +20,20 @@
   body {
     font-family: "Roboto", serif;
     background-color: var(--color-fondo);
-    color: var(--color-principal);
+    color: var(--color-3);
   }
   
-h1{
-     display: inline; /*Convierto a un elemento de bloque como lo es h1 en un elemneto de línea para que se quede al lado d ela imagen
-    color: var(--color-1); */
-    height: 50px;
+/* HEADER */
+
+header{
+  height: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+header h1{
+    color: var(--color-1); 
+   
 }
 
 h2{
