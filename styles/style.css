@@ -49,3 +49,28 @@ header h2{
     left: 75%;
     padding: 20px 0px;
 }
+
+/* Barra de navegación NAV */
+
+#superior{
+  height: 50px;
+  border: 2px solid blueviolet;
+ }
+  
+#superior ul{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+  
+}
+
+/* Quito las viñetas de los elementos li */
+li {
+  list-style-type: none;
+}
+
+li a{
+  text-decoration: none;
+}
+
