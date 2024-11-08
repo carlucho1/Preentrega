@@ -26,12 +26,12 @@
 /* HEADER */
 
 header{
-  height: 70px;
+  height: 10vh;
   background-color: var(--color-3);
 }
 
 header img{
-  height: 70px;
+  height: 10vh;
   position: absolute;
   left:5%
 }
@@ -53,7 +53,7 @@ header h2{
 /* Barra de navegación NAV */
 
 #superior{
-  height: 50px;
+  height: 7vh;
   border: 2px solid blueviolet;
   background-color: yellow;
  }
@@ -76,4 +76,37 @@ li {
 li a{
   text-decoration: none;
 }
+
+/* MAIN */
+
+main{
+  height: 200vh;
+}
+
+/* FOOTER */
+
+/* Lo hago con grid y tomo a footer como contenedor */
+
+footer{
+  width: 100%;
+  height: 50vh;
+  background-color: bisque;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.logos_marcas{
+  grid-column: 1 / 5;
+  grid-row: 1 / 2;
+}
+
+
+
+.logos_marcas ul{
+
+  display: flex;
+
+}
+
 
