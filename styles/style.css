@@ -78,8 +78,17 @@ li a{
 
 /* MAIN */
 
-main{
-  height: 200vh;
+.main_index{
+  height: auto;
+  border: 2px solid red;
+  background-color: aqua;
+
+}
+
+.index_1 img{
+  width: 100vw;
+  height: 83vh;
+  object-fit: cover;
 }
 
 /* FOOTER */
