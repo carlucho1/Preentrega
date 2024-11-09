@@ -215,7 +215,7 @@ footer{
 
 /* Media queries */
 
-@media (max-width: 340px) {
+@media (max-width: 420px) {
 
   footer{
     width: 300px;
