@@ -217,21 +217,33 @@ footer{
 
 @media (max-width: 340px) {
 
-  * FOOTER */
+  footer{
+    width: 300px;
+    height: 300px;
+
+    border: 5px solid red;
+    background-color: #d596ff;
+    /* display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr); */
+  }
+
+  /* FOOTER */
 
 /* Lo hago con grid y tomo a footer como contenedor */
 
+/*
 footer{
   width: 100%;
-  height: 40vh;
+  height: 130vh;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(9, 1fr);
 }
 
 .logos_marcas{
   height: 10vh;
-  grid-column: 1 / 5;
+  grid-column: 1 / 3;
   grid-row: 1 / 2;
   border-top: 1px solid rgb(198, 180, 180);
 }
@@ -337,5 +349,6 @@ footer{
   color: white;
   border-top: 1px solid white;
 }
+  */
 
 }
