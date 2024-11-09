@@ -55,6 +55,7 @@ header h2{
 #superior{
   height: 7vh;
   background-color: yellow;
+  border-bottom: 2px solid blueviolet;
  }
   
 #superior ul{
@@ -80,8 +81,8 @@ li a{
 
 .main_index{
   height: auto;
-  border: 2px solid red;
-  background-color: aqua;
+  /* border: 2px solid red; */
+  /* background-color: aqua; */
 
 }
 
