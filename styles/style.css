@@ -108,16 +108,13 @@ footer{
   height: 10vh;
   grid-column: 1 / 5;
   grid-row: 1 / 2;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 20px; /* Centro las imágenes y les dejo un padding de 20 px en los laterales del contenedor */
   border-top: 1px solid rgb(198, 180, 180);
 }
 
-.logos_marcas ul{
-  display: flex;
-  justify-content: space-around;
-  margin-top: 12px;
-}
-
-.logos_marcas ul li img{
+.logos_marcas img{
   width: 160px;
   height: 50px;
   object-fit: contain;
@@ -191,7 +188,7 @@ footer{
   grid-row: 2 / 3;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   text-align: center;
   color: var(--color-1);
   background-color: var(--color-3);
@@ -200,6 +197,11 @@ footer{
 .redes_sociales ul{
   display: flex;
   justify-content: space-evenly
+}
+
+.redes_sociales ul li a img{
+  width: 30px;
+  height: 24px;
 }
 
 .copyright{
