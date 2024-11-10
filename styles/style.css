@@ -20,7 +20,7 @@
   body {
     font-family: "Roboto", serif;
     background-color: var(--color-fondo);
-    color: var(--color-3);
+    /* color: var(--color-3); */
   }
   
 /* HEADER */
@@ -218,6 +218,8 @@ footer{
 /* Media queries */
 
 @media (max-width: 412px) {
+
+  /* FOOTER */
 
   footer {
     height: auto;

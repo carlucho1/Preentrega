@@ -1,0 +1,67 @@
+/* Defino la paleta de colores */
+
+:root {
+    --color-1: #3519e7; 
+    --color-2: #8557f3;
+    --color-3: #d596ff;
+    --color-fondo: #ffffff; /*Blanco*/
+  }
+
+main{
+    display: flex;
+    flex-direction: row;
+    background-color: beige;
+    padding: 5px;
+}
+
+.formulario form{
+    padding-top: 20px;
+    padding-left: 10px;
+    display: inline-block;
+    width: 480px;
+    height: 450px;
+    border: 5px solid var(--color-3);
+    border-radius: 5%;
+}
+
+.formulario h2{
+    text-align: center;
+    color: var(--color-1);
+    margin-bottom: 10px;
+}
+
+.formulario form textarea{
+    resize: none;
+    width: 440px;
+    height: 60px;
+}
+
+label[for="date"] {
+    margin-left: 30px; /* Ajusta el valor según necesites */
+}
+
+label[form="date"]{
+    margin-left: 20px;
+}
+
+.iframe{
+    text-align: center;
+    border: 2px solid var(--color-2);
+    border-radius: 5%;
+    margin-left: 10px;
+}
+
+.iframe h2{
+    margin-top: 10px;
+    color: var(--color-1);
+}
+
+.iframe iframe{
+    padding: 10px;
+    margin-left: 10px;
+    width: 1000px;
+    height: 450px;
+}
+
+
+
