@@ -111,30 +111,31 @@ footer{
   display: flex;
   justify-content: space-around;
   padding: 12px 20px; /* Centro las imágenes y les dejo un padding de 20 px en los laterales del contenedor */
-  border-top: 1px solid rgb(198, 180, 180);
+  border-top: 1px solid rgb(198, 180, 180); /* Dejo una línea arriba para separar del main */
 }
 
 .logos_marcas img{
   width: 160px;
   height: 50px;
-  object-fit: contain;
+  /* object-fit: contain; */
 }
 
+/* Estos estilos son comunes a las columnas INFORMACIÓN ÚTIL, ACERCA DE NOSOTROS Y CONTÁCTENOS */
 .info_footer{
   height: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  background-color: var(--color-3);
 }
 
 .info_util{
   grid-column: 1 / 2;
   grid-row: 2 / 3;
-  background-color: var(--color-3);
 }
 
 .info_util ul{
-  padding-left: 85px;
+  padding-left: 83px;
 }
 
 .info_util h3{
@@ -150,7 +151,6 @@ footer{
 .acerca_nosotros{
   grid-column: 2 / 3;
   grid-row: 2 / 3;
-  background-color: var(--color-3);
 }
 
 .acerca_nosotros ul{
@@ -170,7 +170,6 @@ footer{
 .contactenos{
   grid-column: 3 / 4;
   grid-row: 2 / 3;
-  background-color: var(--color-3);
 }
 
 .contactenos h3{
@@ -188,7 +187,7 @@ footer{
   grid-row: 2 / 3;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   text-align: center;
   color: var(--color-1);
   background-color: var(--color-3);
@@ -196,12 +195,13 @@ footer{
 
 .redes_sociales ul{
   display: flex;
-  justify-content: space-evenly
+  justify-content: center;
 }
 
 .redes_sociales ul li a img{
   width: 30px;
   height: 24px;
+  margin-right: 15px;
 }
 
 .copyright{
@@ -217,140 +217,63 @@ footer{
 
 /* Media queries */
 
-@media (max-width: 420px) {
+@media (max-width: 412px) {
 
-  footer{
-    width: 300px;
-    height: 300px;
-
-    border: 5px solid red;
-    background-color: #d596ff;
-    /* display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr); */
+  footer {
+    height: auto;
+    display: flex;
+    flex-direction: column;
   }
 
-  /* FOOTER */
+  .logos_marcas {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+  }
 
-/* Lo hago con grid y tomo a footer como contenedor */
+  .logos_marcas img {
+    width: 100px;
+    height: auto;
+    margin: 5px;
+  }
 
-/*
-footer{
-  width: 100%;
-  height: 130vh;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(9, 1fr);
-}
+  .info_footer {
+    height: auto;
+    padding: 10px;
+  }
 
-.logos_marcas{
-  height: 10vh;
-  grid-column: 1 / 3;
-  grid-row: 1 / 2;
-  border-top: 1px solid rgb(198, 180, 180);
-}
+  .info_util,
+  .acerca_nosotros,
+  .contactenos,
+  .redes_sociales {
+    grid-column: 1 / 5;
+    padding: 10px;
+  }
 
-.logos_marcas ul{
-  display: flex;
-  justify-content: space-around;
-  margin-top: 12px;
-}
+  .info_util ul,
+  .acerca_nosotros ul,
+  .contactenos ul {
+    padding-left: 20px;
+  }
 
-.logos_marcas ul li img{
-  width: 160px;
-  height: 50px;
-  object-fit: contain;
-}
+  .contactenos ul li {
+    padding-left: 20px;
+  }
 
-.info_footer{
-  height: 20vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
+  .redes_sociales ul {
+    flex-direction: row;
+    justify-content: center;
+  }
 
-.info_util{
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-  background-color: var(--color-3);
-}
+  .redes_sociales ul li a img {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+  }
 
-.info_util ul{
-  padding-left: 85px;
-}
-
-.info_util h3{
-  text-align: center;
-  color: var(--color-1);
-}
-
-.info_util ul li{
-  margin-bottom: 5px;
-  padding-left: 20px;
-}
-
-.acerca_nosotros{
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  background-color: var(--color-3);
-}
-
-.acerca_nosotros ul{
-  padding-left: 30px;
-}
-
-.acerca_nosotros h3{
-  text-align: center;
-  color: var(--color-1);
-}
-
-.acerca_nosotros ul li{
-  margin-bottom: 5px;
-  padding-left: 20px;
-}
-
-.contactenos{
-  grid-column: 3 / 4;
-  grid-row: 2 / 3;
-  background-color: var(--color-3);
-}
-
-.contactenos h3{
-  text-align: center;
-  color: var(--color-1);
-}
-
-.contactenos ul li{
-  margin-bottom: 5px;
-  padding-left: 125px;
-}
-
-.redes_sociales{
-  grid-column: 4 / 5;
-  grid-row: 2 / 3;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  text-align: center;
-  color: var(--color-1);
-  background-color: var(--color-3);
-}
-
-.redes_sociales ul{
-  display: flex;
-  justify-content: space-evenly
-}
-
-.copyright{
-  height: 10vh;
-  grid-column: 1 / 5;
-  grid-row: 3 / 4;
-  text-align: center;
-  padding-top: 22px;
-  background-color: black;
-  color: white;
-  border-top: 1px solid white;
-}
-  */
-
+  .copyright {
+    height: auto;
+    padding: 10px 0;
+  }
 }
