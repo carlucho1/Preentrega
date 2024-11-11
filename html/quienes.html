@@ -43,85 +43,18 @@
 </main>
 
 
-<!-- Fin de página FOOTER -->
+<!-- Fin de página FOOTER insertado mediante fetch-->
 
-<footer>
+<div id="footer"></div>
 
-    <!-- Logos de marcas -->
-    <div class="logos_marcas">
-        <img src="../images/GIGABYTE.png" alt="GIGABYTE">
-        <img src="../images/hyperx.png" alt="HYPER">
-        <img src="../images/Kingston.png" alt="KINGSTON">
-        <img src="../images/logo_MSI.png" alt="MSI">
-        <img src="../images/logo_Redragon.png" alt="REDRAGON">
-        <img src="../images/thermaltake.png" alt="THERMALTAKE">
-        <img src="../images/viewsonic-logo.png" alt="VIEWSONIC">
-        <img src="../images/wacom.png" alt="WACON">
-    </div>
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
+</script>
 
-    <!-- NAV de INFORMACIÓN ÚTIL para el cliente -->
-    <nav class="info_footer info_util">
-        <h3>INFORMACIÓN ÚTIL</h3>
-        <ul>
-            <li><a href="#">PREGUNTAS FRECUENTES</a></li>
-            <li><a href="#">FORMAS DE PAGO</a></li>
-            <li><a href="#">BOTÓN DE ARREPENTIMIENTO</a></li>
-            <li><a href="#">DEFENSA AL CONSUMIDOR</a></li>
-        </ul>
-    </nav>
-
-      <!-- NAV de ACERCA DE NOSOTROS -->
-    <nav class="info_footer acerca_nosotros">
-        <h3>ACERCA DE NUESTRA EMPRESA</h3>
-          <ul>
-              <li><a href="">QUIÉNES SOMOS</a></li>
-              <li><a href="">CONTACTO</a></li>
-              <li><a href="">TRABAJAR CON NOSOTROS</a></li>
-              <li><a href="">BLOG</a></li>
-          </ul>
-    </nav>
-
-    <!-- NAV de CONTÁCTENOS -->
-    <nav class="info_footer contactenos">
-        <h3>CONTÁCTENOS</h3>
-          <ul>
-              <li><a href="">QUIERO SER REVENDEDOR</a></li>
-              <li><a href="">QUIERO QUE ME LLAMEN</a></li>
-              <li><a href="">902-3466-5879</a></li>
-              <li><a href="">SANTA HORTENSIA 22, 28005</a></li>
-          </ul>
-    </nav>
-
-    <!-- NAV de REDES SOCIALES -->
-    <nav class="redes_sociales">
-        <h2>NUESTRAS REDES SOCIALES</h2>
-        <ul>
-            <li>
-                <a href="https://www.instagram.com/" target="_blank"><img src="../images/instagram.png" alt="Instagram"></a>
-            </li>
-            <li>     
-                <a href="https://www.facebook.com/" target="_blank"><img src="../images/facebook.png" alt="Facebook"></a>
-            </li>
-            <li>
-                <a href="https://www.youtube.com/" target="_blank"><img src="../images/youtube.png" alt="Youtube"></a>
-            </li>
-            <li>
-                <a href="https://x.com/" target="_blank"><img src="../images/x.png" alt="Youtube"></a>
-            </li>
-            <li>
-                <a href="https://www.tiktok.com/discover?lang=es" target="_blank"><img src="../images/tiktok.png" alt="Tik Tok"></a>
-            </li>
-            <li>
-                <a href="https://www.whatsapp.com/?lang=es_LA" target="_blank"><img src="./images/whatsapp.png" alt="Whatsapp"></a>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- Copyright -->
-    <p class="copyright">Copyright © 2024 - Todos los derechos reservados. Prohibida su reproducción</p>
-    
-</footer>
-    
 </body>
 
 </html>
