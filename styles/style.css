@@ -64,7 +64,6 @@ header h2{
   /* Le doy una postion relative para bajar con top y centrar los li que contienen los a */
   position: relative;
   top: 15px;
-  
 }
 
 /* Quito las viñetas de los elementos li */
@@ -75,21 +74,6 @@ li {
 /* Quito el subrayado del link */
 li a{
   text-decoration: none;
-}
-
-/* MAIN */
-
-.main_index{
-  height: auto;
-  /* border: 2px solid red; */
-  /* background-color: aqua; */
-
-}
-
-.index_1 img{
-  width: 100vw;
-  height: 83vh;
-  object-fit: cover;
 }
 
 /* FOOTER */
@@ -213,6 +197,190 @@ footer{
   background-color: black;
   color: white;
   border-top: 1px solid white;
+}
+
+/* CSS de página contactos.html */
+
+.main_contacto{
+  display: flex;
+  flex-direction: row;
+  background-color: beige;
+  padding: 5px;
+}
+
+.formulario form{
+  padding-top: 20px;
+  padding-left: 10px;
+  display: inline-block;
+  width: 480px;
+  height: 450px;
+  border: 5px solid var(--color-3);
+  border-radius: 5%;
+}
+
+.formulario h2{
+  text-align: center;
+  color: var(--color-1);
+  margin-bottom: 10px;
+}
+
+.formulario form textarea{
+  resize: none;
+  width: 440px;
+  height: 60px;
+}
+
+label[for="date"] {
+  margin-left: 30px; /* Ajusta el valor según necesites */
+}
+
+label[form="date"]{
+  margin-left: 20px;
+}
+
+.iframe{
+  text-align: center;
+  border: 2px solid var(--color-2);
+  border-radius: 5%;
+  margin-left: 10px;
+}
+
+.iframe h2{
+  margin-top: 10px;
+  color: var(--color-1);
+}
+
+.iframe iframe{
+  padding: 10px;
+  margin-left: 10px;
+  width: 1000px;
+  height: 450px;
+}
+
+/* CSS de página productos.html */
+
+.main_productos h2{
+  text-align: center;
+  color: var(--color-1);
+}
+
+.main_productos .productos{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.main_productos .productos img{
+  width: 300px;
+  height: auto;
+}
+
+/* CSS de página quienes.html */
+
+.main_quienes{
+  color: black;
+}
+
+.main_quienes h2{
+  text-align: center;
+  color: var(--color-1);
+  margin: 10px;
+}
+
+.main_quienes p{
+  text-align: justify;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.main_quienes iframe{
+  width: 800px;
+  height: 450px;
+  position: relative;
+ left: 400px
+}
+
+/* CSS de página index.html - CSS de la card */
+
+/* MAIN */
+
+.main_index{
+  height: auto;
+  /* border: 2px solid red; */
+  /* background-color: aqua; */
+
+}
+
+.index_1 img{
+  width: 100vw;
+  height: 83vh;
+  object-fit: cover;
+}
+
+.container_index{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px
+  
+}
+
+/* Evita que aparezca la línea debajo del texto del hipervínculo */
+a{
+  text-decoration: none;  
+}
+
+/* Estilo a todo el contenedor que alberga la card */
+.card{
+  border: solid 3px rgb(199, 69, 69);
+  width: 200px;
+  height: 300px;
+  border-radius: 20px;
+  position: relative;
+  left: 10px;
+  top: 10px;
+  background-color: yellow;
+}
+
+/* object-fit: contain: La imagen se ajustará al contenedor sin recortarse, pero puede dejar espacio vacío alrededor si las proporciones son diferentes. */
+.card #top{
+  height: 100px;
+  width: 100%;
+  object-fit: contain;
+}
+
+/* Estilo al h2 */
+.card h2{
+  padding-top: 10px;
+  text-align: center;
+  color: blue;
+  height: 50px;
+  border-top: solid 2px rgb(189, 28, 71);
+  border-bottom: solid 2px rgb(189, 28, 71);
+  font-size: 1.6rem
+  }
+
+/* Estilo a p */
+.card p{
+  border-bottom: solid 2px rgb(189, 28, 71);
+  height: 100px;
+  text-align: justify;
+  padding: 0 5px;
+  padding: 5px 5px;
+  font-weight: 300;
+  font-size: 0.75rem;
+  color: blueviolet;
+}  
+
+.card #bottom{
+  width: 40px;
+  border-radius: 80%;
+  height: 40px;
+}
+
+.precio{
+  position: relative;
+  bottom: 35px;
+  left: 90px
 }
 
 /* Media queries */
