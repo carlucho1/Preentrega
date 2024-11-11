@@ -305,10 +305,7 @@ label[form="date"]{
 /* MAIN */
 
 .main_index{
-  height: auto;
-  /* border: 2px solid red; */
-  /* background-color: aqua; */
-
+  padding: 15px;
 }
 
 .index_1 img{
@@ -320,8 +317,8 @@ label[form="date"]{
 .container_index{
   display: flex;
   flex-wrap: wrap;
-  gap: 15px
-  
+  gap: 10px;
+  justify-content: flex-start;
 }
 
 /* Evita que aparezca la línea debajo del texto del hipervínculo */
