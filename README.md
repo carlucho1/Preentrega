@@ -1,5 +1,5 @@
 Este proyecto lo emprendí con un esquema de múltiples páginas, en donde cada una tiene dos etiquetas semánticas comunes que son el header, el nav superior (debajo del header) y el footer. Todas las páginas también tienen un main como 
-etiqueta semántica. or ahora las páginas son:
+etiqueta semántica. Por ahora las páginas son:
 
 index.html (enlace titulado 'Inicio' en la barra de navegación)
 quienes.html (enlace titulado 'Quiénes somos' en la barra de navegación)
