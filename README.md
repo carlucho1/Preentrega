@@ -1,4 +1,4 @@
-Este proyecto lo emprendí con un esquema de múltiples páginas, en donde cada una tiene dos etiquetas semánticas comunes que son el header, el nav superior (debajo del header) y el footer. Todas las páginas también tienen un main como 
+Este proyecto lo emprendí con un esquema de múltiples páginas, en donde cada una tienen tres etiquetas semánticas comunes que son el header, el nav superior (debajo del header) y el footer. Todas las páginas también tienen un main como 
 etiqueta semántica. Por ahora las páginas son:
 
 index.html (enlace titulado 'Inicio' en la barra de navegación)
