@@ -5,41 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quienes</title>
 
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
 
 <!-- HEADER y NAV insertados mediante fetch-->
 
-<div id="header_nav"></div>
+<div id="header_nav">
 
-<script>
-  fetch('header_nav.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('header_nav').innerHTML = data;
-    });
-</script>
+</div>
 
-<!-- Encabezado de la página web HEADER -->
-    <!-- <header>
-        <img src="../images/logo.png" alt="Logo de la empresa" height="50px">
-        <h1>Productos de computación y Redes</h1>
-        <h2>Ofertas de último momento</h2>
-    </header> -->
+  <script>
+    fetch('header_nav.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header_nav').innerHTML = data;
+      });
+  </script>
 
-<!-- Barra de navegación NAV -->
-
-<!-- <nav id="superior"> -->
-    <!-- Defino una lista desordenada -->
-    <!-- <ul>
-        <li><a href="../index.html">Inicio</a></li>
-        <li><a href="./quienes.html">Quiénes somos</a></li>
-        <li><a href="./productos.html">Productos</a></li>
-        <li><a href="./contacto.html">Contacto</a></li>
-    </ul>
-</nav> -->
 
 <!-- Cuerpo principal de la página MAIN -->
 
@@ -52,7 +36,6 @@
     <iframe  src="https://www.youtube.com/embed/uunnO9yZCYk?si=6_FCybG08eua8Evm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
  
 </main>
-
 
 <!-- Fin de página FOOTER insertado mediante fetch-->
 
