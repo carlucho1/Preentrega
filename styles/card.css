@@ -24,9 +24,6 @@ a{
     width: 200px;
     height: 300px;
     border-radius: 20px;
-    position: relative;
-    left: 10px;
-    top: 10px;
     background-color: yellow;
 }
 

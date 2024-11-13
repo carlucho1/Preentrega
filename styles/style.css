@@ -27,6 +27,8 @@
 header{
   height: 10vh;
   background-color: var(--color-3);
+  /* position: fixed; */
+  
 }
 
 header img{
@@ -299,12 +301,12 @@ label[form="date"]{
  left: 400px
 }
 
-/* CSS de página index.html - CSS de la card */
+/* CSS de página index.html (el main, que incluye el CSS de la card) */
 
 /* MAIN */
 
 .main_index{
-  padding: 15px;
+  padding-bottom: 5px;
 }
 
 .index_1 img{
@@ -313,15 +315,21 @@ label[form="date"]{
   object-fit: cover;
 }
 
-.container_index{
+/* Empieza la CARD */
+
+.container_cards{
+  /* border: 2px solid blue; */
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: flex-start;
+  padding-left: 30px;
+  justify-content: start;
+  align-content: center;
 }
 
 /* Evita que aparezca la línea debajo del texto del hipervínculo */
-a{
+.container_cards a{
   text-decoration: none;  
 }
 
@@ -331,9 +339,6 @@ a{
   width: 200px;
   height: 300px;
   border-radius: 20px;
-  position: relative;
-  left: 10px;
-  top: 10px;
   background-color: yellow;
 }
 
@@ -382,6 +387,26 @@ a{
 /* Media queries */
 
 @media (max-width: 412px) {
+
+
+  /* HEADER */
+
+header img{
+    display: inline-block;
+    width: 100px;
+    height: auto;
+    margin: 5px;
+   }
+
+header{
+    /* max-width: 412px; */
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+
 
   /* FOOTER */
 
