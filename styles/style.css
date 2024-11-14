@@ -289,9 +289,12 @@ label[form="date"]{
 }
 
 .main_quienes p{
+  font-family: 'Comic Sans MS', cursive;  
+  padding: 0 20px;
   text-align: justify;
   color: black;
   margin-bottom: 20px;
+  text-indent: 15px;
 }
 
 .main_quienes iframe{
