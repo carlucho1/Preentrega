@@ -33,65 +33,65 @@
 
         <h2>Formulario de contacto</h2>
 
-        <form action="form.html" target="_blank">
+        <form id="formulario" action="form.html" method="" target="_blank">
 
             <label for="name">Nombre</label>
-            <input type="text" placeholder="Matías Sebastián" id="name" required>
+            <input id="name" type="text" placeholder="Matías Sebastián" name="name" required>
     
             <label for="lastname">Apellido</label>
-            <input type="text" placeholder="Duarte Fernández" id="lastname" required><br><br>
+            <input id="lastname" type="text" placeholder="Duarte Fernández" name="lastname" required><br><br>
     
             <label for="email">Email</label>
-            <input type="email" placeholder="ejemplo@gmail.com" id="email" required>
+            <input id="email" type="email" placeholder="ejemplo@gmail.com" name="email" required>
     
             <label for="pass">Password</label>
-            <input type="password" placeholder="Ingrese su password" id="pass" required><br><br>
+            <input id="pass" type="password" placeholder="Ingrese su password" required><br><br>
     
-            <label for="tel">Teléfono</label>
-            <input type="tel" id="tel" name="tel" pattern="[0-9]{10}" placeholder="10 números sin espacios"  required>
+            <label for="telefono">Teléfono</label>
+            <input id="telefono" type="tel" name="telefono" pattern="[0-9]{10}" placeholder="10 números sin espacios" required>
     
             <!-- <input type="color">
             <input type="range"> -->
     
             <label for="date">Fecha</label>
-            <input type="date" name="date" id="date" required><br><br>
+            <input id="date" type="date" name="date" required><br><br>
     
             <!-- Vamos con un select ahora. La ventaja que tiene es que acota bien al dato. Como desventaja en value se podría estar enviando un valor forzado aunque se seleccione otro.-->
     
             <label for="select">Seleccione el sexo</label>
             <select name="" id="select">
-                <option value="">Masculino</option>
-                <option value="">Femenino</option>
-                <option value="">Binario</option>
-                <option value="">Prefiero no decirlo</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Binario">Binario</option>
+                <option value="Prefiero no decirlo">Prefiero no decirlo</option>
             </select>
     
             <br>
     
          <!-- Input de tipo checkbox y de tipo radio. En ambos notar la importancia del atributo name. Sobretodo se nota en el input de tipo radio, si no se pone el mismo name a todo, de todos los circulitos no se puede seleccionar uno solo. Siempre hay que agrupar por temática.-->
     
-         <h2 id="Comp">Computadoras</h2>
+         <h2 id="Comp">Elegí la marca de tu Computadora</h2>
     
          <!-- El chequeo de que al menos una opción esté marcada se hará más adelante con javascript -->
     
-         <input type="checkbox" name="marca" id="">DELL
-         <input type="checkbox" name="marca" id="">HP
-         <input type="checkbox" name="marca" id="">LENOVO
-         <input type="checkbox" name="marca" id="">APPLE
-         <input type="checkbox" name="marca" id="">ASUS
+         <input id="opcion1" type="checkbox" value="DELL" name="marca">DELL
+         <input id="opcion2" type="checkbox" value="HP" name="marca">HP
+         <input id="opcion3" type="checkbox" value="LENOVO" name="marca">LENOVO
+         <input id="opcion4" type="checkbox" value="APPLE" name="marca">APPLE
+         <input id="opcion5" type="checkbox" value="ASUS" name="marca">ASUS
     
          <br>
     
          <!-- Input de tipo radio -->
     
-         <h2>Memorias</h2>
+         <h2>Elegí cuánta memoria RAM le agregás</h2>
         
          <!-- En este caso la verificación con que se indique un único required entre las opciones es suficiente -->
-         <input type="radio" name="memoria" id="" required>4Gb
-         <input type="radio" name="memoria" id="">8Gb
-         <input type="radio" name="memoria" id="">16Gb
-         <input type="radio" name="memoria" id="">32Gb
-         <input type="radio" name="memoria" id="">64Gb
+         <input id="4GB" type="radio" value="4GB" name="memoria" required>4GB
+         <input id="8GB" type="radio" value="8GB" name="memoria" id="">8GB
+         <input id="16GB" type="radio" value="16GB" name="memoria" id="">16B
+         <input id="32GB" type="radio" value="32GB" name="memoria" id="">32GB
+         <input id="64GB" type="radio" value="64GB" name="memoria" id="">64GB
     
          <br><br>
     
@@ -102,7 +102,7 @@
             
          <!-- Botón de Reset y de envío de formulario -->
             <input type="reset" value="Borrar formulario">
-            <input type="submit" value="Enviar">
+            <input onclick="mostrarinput()" type="submit" value="Enviar">
         </form>
     </div>
 
@@ -127,6 +127,8 @@
       document.getElementById('footer').innerHTML = data;
     });
 </script>
+
+<script src="script.js"></script>
 
 </body>
 
