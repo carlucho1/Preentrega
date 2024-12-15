@@ -29,18 +29,22 @@ console.log(checkboxOpcion4);
 console.log(checkboxOpcion5);
 
 //Manejo de los inputs type radius
-const input4GB = document.getElementById("4GB")
+const input4GB = document.getElementById("4GB");
 const input8GB = document.getElementById("8GB");
 const input16GB = document.getElementById("16GB");
 const input32GB = document.getElementById("32GB");
 const input64GB = document.getElementById("64GB");
 
 // Muestro en consola las capturas de los radius
-console.log(input4GB)
+console.log(input4GB);
 console.log(input8GB);
 console.log(input16GB);
 console.log(input32GB);
 console.log(input64GB);
+
+//Captura de text area
+const textArea = document.getElementById("message");
+console.log(textArea);
 
 function mostrarinput() {
   console.log(inputName.value);
@@ -59,4 +63,5 @@ function mostrarinput() {
   if (input16GB.checked) console.log(input16GB.value); // "16GB"
   if (input32GB.checked) console.log(input32GB.value); // "32GB"
   if (input64GB.checked) console.log(input64GB.value); // "64GB"
+  console.log(textArea.value);
 }
