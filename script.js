@@ -92,10 +92,9 @@ console.log(textArea);
 //   console.log(textArea.value);
 // });
 
-
 // Ahora voy a capturar en un objeto todos los valores del formulario. Para ello es que están definidos los atributois de name, ya que ahí viajarán los valores que se ingresan en los inputs y que serán las claves del objeto. Por ejemplo el campo nombre del formulario, el name se llama name, por lo tante el primer par clave-valor del objeto que se genere será: name: Carlos (por ejemplo). Luego el campo Apellido, el name es lastname, por lo tanto este segundo atributo del objeto será el par clave-valor dado por lastname: López (por ejemplo). Lo importante es que siempre para que el valor se capture debe haber un atributo llamado name en el input, de lo contrario no se capturará dicho elemento.
 
-// const inputSubmit = document.getElementById("submit"); 
+// const inputSubmit = document.getElementById("submit");
 const formulario = document.getElementById("formulario");
 formulario.addEventListener("submit", (evento) => {
   evento.preventDefault();
@@ -108,6 +107,10 @@ formulario.addEventListener("submit", (evento) => {
       datosFormulario[elemento.name] = elemento.value;
     }
   }
-
   console.log(datosFormulario);
+  // Voy a dar una respuesta al usuario con los datos que ingresó en el formulario usando el área del iframe
+  const iframe = document.getElementById("iframe"); //Capturo el elemento iframe
+  const salida = document.getElementById("salida");
+  salida.textContent = "LOS DATOS INGRESADOS EN EL FORMULARIO SON:";
+  iframe.classList.add("borroiframe"); //Le cambio la clase y lo borro con display: none
 });
