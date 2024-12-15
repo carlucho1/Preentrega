@@ -46,7 +46,33 @@ console.log(input64GB);
 const textArea = document.getElementById("message");
 console.log(textArea);
 
-function mostrarinput() {
+// function mostrarinput() {
+//   console.log(inputName.value);
+//   console.log(inputLastname.value);
+//   console.log(inputEmail.value);
+//   console.log(inputTelefono.value);
+//   console.log(inputDate.value);
+//   console.log(inputSelect.value);
+//   if (checkboxOpcion1.checked) console.log(checkboxOpcion1.value); // "DELL"
+//   if (checkboxOpcion2.checked) console.log(checkboxOpcion2.value); // "HP"
+//   if (checkboxOpcion3.checked) console.log(checkboxOpcion3.value); // "LENOVO"
+//   if (checkboxOpcion4.checked) console.log(checkboxOpcion4.value); // "APPLE"
+//   if (checkboxOpcion5.checked) console.log(checkboxOpcion5.value); // "ASUS"
+//   if (input4GB.checked) console.log(input4GB.value); // "4GB"
+//   if (input8GB.checked) console.log(input8GB.value); // "8GB"
+//   if (input16GB.checked) console.log(input16GB.value); // "16GB"
+//   if (input32GB.checked) console.log(input32GB.value); // "32GB"
+//   if (input64GB.checked) console.log(input64GB.value); // "64GB"
+//   console.log(textArea.value);
+// }
+
+// Prueba usando addEvenListener
+
+const inputSubmit = document.getElementById("submit")
+console.log(inputSubmit)
+console.log(inputSubmit.value)
+
+inputSubmit.addEventListener("click", function() {
   console.log(inputName.value);
   console.log(inputLastname.value);
   console.log(inputEmail.value);
@@ -64,4 +90,5 @@ function mostrarinput() {
   if (input32GB.checked) console.log(input32GB.value); // "32GB"
   if (input64GB.checked) console.log(input64GB.value); // "64GB"
   console.log(textArea.value);
-}
+});
+
