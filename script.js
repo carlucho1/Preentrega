@@ -95,22 +95,47 @@ console.log(textArea);
 // Ahora voy a capturar en un objeto todos los valores del formulario. Para ello es que están definidos los atributois de name, ya que ahí viajarán los valores que se ingresan en los inputs y que serán las claves del objeto. Por ejemplo el campo nombre del formulario, el name se llama name, por lo tante el primer par clave-valor del objeto que se genere será: name: Carlos (por ejemplo). Luego el campo Apellido, el name es lastname, por lo tanto este segundo atributo del objeto será el par clave-valor dado por lastname: López (por ejemplo). Lo importante es que siempre para que el valor se capture debe haber un atributo llamado name en el input, de lo contrario no se capturará dicho elemento.
 
 // const inputSubmit = document.getElementById("submit");
-const formulario = document.getElementById("formulario");
+const formulario = document.getElementById("formulario1");
+// formulario.addEventListener("submit", (evento) => {
+//   evento.preventDefault();
+
+//   const datosFormulario = {};
+//     const elementos = formulario.elements; // Accede a todos los campos del formulario
+//     // console.log(elementos)
+
+//   for (let elemento of elementos) {
+//     if (elemento.name) {
+//       datosFormulario[elemento.name] = elemento.value;
+//     }
+//   }
+//   console.log(datosFormulario);
+//   // Voy a dar una respuesta al usuario con los datos que ingresó en el formulario usando el área del iframe
+//   const iframe = document.getElementById("iframe"); //Capturo el elemento iframe
+//   const salida = document.getElementById("salida");
+//   salida.textContent = "LOS DATOS INGRESADOS EN EL FORMULARIO SON:";
+//   iframe.classList.add("borroiframe"); //Le cambio la clase y lo borro con display: none
+// });
+
+// ******************USO DE FORMDATA**************************************************************************
+// Funciona OK el input radius, pero en el checkbox (si hay más de uno seleccionado), siempre recuerda el de más a la derecha
 formulario.addEventListener("submit", (evento) => {
+  // Evitar el envío tradicional del formulario
   evento.preventDefault();
 
+  // Crear un objeto para almacenar los valores
   const datosFormulario = {};
-  const elementos = formulario.elements; // Accede a todos los campos del formulario
 
-  for (let elemento of elementos) {
-    if (elemento.name) {
-      datosFormulario[elemento.name] = elemento.value;
-    }
-  }
+  // Usar FormData para extraer los valores
+  const formData = new FormData(formulario);
+  formData.forEach((valor, clave) => {
+    datosFormulario[clave] = valor;
+  });
+
+  // Mostrar el objeto con los datos
   console.log(datosFormulario);
   // Voy a dar una respuesta al usuario con los datos que ingresó en el formulario usando el área del iframe
-  const iframe = document.getElementById("iframe"); //Capturo el elemento iframe
-  const salida = document.getElementById("salida");
-  salida.textContent = "LOS DATOS INGRESADOS EN EL FORMULARIO SON:";
-  iframe.classList.add("borroiframe"); //Le cambio la clase y lo borro con display: none
+    const iframe = document.getElementById("iframe"); //Capturo el elemento iframe
+    const salida = document.getElementById("salida");
+    salida.textContent = "LOS DATOS INGRESADOS EN EL FORMULARIO SON:";
+    iframe.classList.add("borroiframe"); //Le cambio la clase y lo borro con display: none
 });
