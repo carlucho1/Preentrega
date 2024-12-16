@@ -125,7 +125,8 @@ formulario.addEventListener("submit", (evento) => {
   // Crear un objeto para almacenar los valores
   const datosFormulario = {};
 
-  // Usar FormData para extraer los valores
+  // Usar FormData para extraer los valoresgit log
+
   const formData = new FormData(formulario);
   formData.forEach((valor, clave) => {
     datosFormulario[clave] = valor;
@@ -134,8 +135,39 @@ formulario.addEventListener("submit", (evento) => {
   // Mostrar el objeto con los datos
   console.log(datosFormulario);
   // Voy a dar una respuesta al usuario con los datos que ingresó en el formulario usando el área del iframe
-    const iframe = document.getElementById("iframe"); //Capturo el elemento iframe
-    const salida = document.getElementById("salida");
-    salida.textContent = "LOS DATOS INGRESADOS EN EL FORMULARIO SON:";
-    iframe.classList.add("borroiframe"); //Le cambio la clase y lo borro con display: none
+  const iframe = document.getElementById("iframe"); //Capturo el elemento iframe
+  const salida = document.getElementById("salida"); //salida es la clase que le di al h2 del contenedor
+  salida.textContent = "LOS DATOS INGRESADOS EN EL FORMULARIO SON:";
+  iframe.classList.add("borroiframe"); //Le cambio la clase y lo borro con display: none
+
+  // **************************Voy a imprimir los valores del objeto*************************************
+  
+  // Crear un nuevo contenedor para mostrar los resultados del objeto
+  let nuevoContenedor = document.getElementById("resultados");
+  console.log(nuevoContenedor)
+
+  // Si el contenedor no existe, crearlo dinámicamente
+  if (!nuevoContenedor) {
+    nuevoContenedor = document.createElement("div");
+    nuevoContenedor.id = "contenedor-resultados";
+    nuevoContenedor.style.marginTop = "20px"; // Agrega estilo opcional
+    document.body.appendChild(nuevoContenedor); // Lo agrega al final del <body>
+  }
+
+  // Limpiar el contenedor antes de agregar nuevos resultados
+  nuevoContenedor.innerHTML = "";
+
+  // Crear un título para los resultados
+  // const titulo = document.createElement("h3");
+  // titulo.textContent = "Resultados del formulario:";
+  // nuevoContenedor.appendChild(titulo);
+
+  // Recorre los campos del objeto y los agrega al nuevo contenedor
+  for (const clave in datosFormulario) {
+    if (datosFormulario.hasOwnProperty(clave)) {
+      const parrafo = document.createElement("p");
+      parrafo.textContent = `${clave}: ${datosFormulario[clave]}`;
+      nuevoContenedor.appendChild(parrafo);
+    }
+  }
 });
