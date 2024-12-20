@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "img1": "./images/Dell.png",
+    "h2": "Netbook DELL",
+    "p": "el loco de todos!",
+    "img2": "./images/crucero.png",
+    "h3":"hola qué tal nene"
+  },
+  {
+    "id": 2,
+    "img1": "./images/cliente_1.png",
+    "h2": "Netbook DELL",
+    "p": "el loco de todos!",
+    "img2": "./images/crucero.png",
+    "h3": "hola qué tal nene"
+  }
+]

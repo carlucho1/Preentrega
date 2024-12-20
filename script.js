@@ -14,7 +14,7 @@ console.log(inputTelefono);
 console.log(inputDate);
 console.log(inputSelect);
 
-// Manejo de los inputs type checkbox
+// Manejo de los inputs type radio
 const checkboxOpcion1 = document.getElementById("opcion1"); //DELL
 const checkboxOpcion2 = document.getElementById("opcion2"); //HP
 const checkboxOpcion3 = document.getElementById("opcion3"); //LENOVO
@@ -46,75 +46,12 @@ console.log(input64GB);
 const textArea = document.getElementById("message");
 console.log(textArea);
 
-// function mostrarinput() {
-//   console.log(inputName.value);
-//   console.log(inputLastname.value);
-//   console.log(inputEmail.value);
-//   console.log(inputTelefono.value);
-//   console.log(inputDate.value);
-//   console.log(inputSelect.value);
-//   if (checkboxOpcion1.checked) console.log(checkboxOpcion1.value); // "DELL"
-//   if (checkboxOpcion2.checked) console.log(checkboxOpcion2.value); // "HP"
-//   if (checkboxOpcion3.checked) console.log(checkboxOpcion3.value); // "LENOVO"
-//   if (checkboxOpcion4.checked) console.log(checkboxOpcion4.value); // "APPLE"
-//   if (checkboxOpcion5.checked) console.log(checkboxOpcion5.value); // "ASUS"
-//   if (input4GB.checked) console.log(input4GB.value); // "4GB"
-//   if (input8GB.checked) console.log(input8GB.value); // "8GB"
-//   if (input16GB.checked) console.log(input16GB.value); // "16GB"
-//   if (input32GB.checked) console.log(input32GB.value); // "32GB"
-//   if (input64GB.checked) console.log(input64GB.value); // "64GB"
-//   console.log(textArea.value);
-// }
+// Ahora voy a capturar en un objeto todos los valores del formulario. Para ello es que están definidos los atributos de name, ya que ahí viajarán dichos (bajo la variable name), con los valores que se ingresen en los inputs y que serán las claves o los atributos del objeto a crear. Por ejemplo el campo nombre del formulario, el name se llama name, por lo tante el primer par clave(atributo)-valor del objeto que se genere será: name: Carlos (por ejemplo). Luego el campo Apellido, el name es lastname, por lo tanto este segundo atributo del objeto será el par clave-valor dado por lastname: López (por ejemplo). Lo importante es que siempre para que el valor se capture debe haber un atributo llamado "name" en el input, de lo contrario no se capturará dicho elemento.
 
-// Prueba usando addEvenListener. Notar que usamos una función anónima con el mismo contenido de mostrarinput()
-
-// const inputSubmit = document.getElementById("submit")
-// console.log(inputSubmit)
-// console.log(inputSubmit.value)
-
-// inputSubmit.addEventListener("click", function() {
-//   console.log(inputName.value);
-//   console.log(inputLastname.value);
-//   console.log(inputEmail.value);
-//   console.log(inputTelefono.value);
-//   console.log(inputDate.value);
-//   console.log(inputSelect.value);
-//   if (checkboxOpcion1.checked) console.log(checkboxOpcion1.value); // "DELL"
-//   if (checkboxOpcion2.checked) console.log(checkboxOpcion2.value); // "HP"
-//   if (checkboxOpcion3.checked) console.log(checkboxOpcion3.value); // "LENOVO"
-//   if (checkboxOpcion4.checked) console.log(checkboxOpcion4.value); // "APPLE"
-//   if (checkboxOpcion5.checked) console.log(checkboxOpcion5.value); // "ASUS"
-//   if (input4GB.checked) console.log(input4GB.value); // "4GB"
-//   if (input8GB.checked) console.log(input8GB.value); // "8GB"
-//   if (input16GB.checked) console.log(input16GB.value); // "16GB"
-//   if (input32GB.checked) console.log(input32GB.value); // "32GB"
-//   if (input64GB.checked) console.log(input64GB.value); // "64GB"
-//   console.log(textArea.value);
-// });
-
-// Ahora voy a capturar en un objeto todos los valores del formulario. Para ello es que están definidos los atributois de name, ya que ahí viajarán los valores que se ingresan en los inputs y que serán las claves del objeto. Por ejemplo el campo nombre del formulario, el name se llama name, por lo tante el primer par clave-valor del objeto que se genere será: name: Carlos (por ejemplo). Luego el campo Apellido, el name es lastname, por lo tanto este segundo atributo del objeto será el par clave-valor dado por lastname: López (por ejemplo). Lo importante es que siempre para que el valor se capture debe haber un atributo llamado name en el input, de lo contrario no se capturará dicho elemento.
+let personas = []; //Preparo un array vacío donde vamos a almacenar los objetos
 
 // const inputSubmit = document.getElementById("submit");
-const formulario = document.getElementById("formulario1");
-// formulario.addEventListener("submit", (evento) => {
-//   evento.preventDefault();
-
-//   const datosFormulario = {};
-//     const elementos = formulario.elements; // Accede a todos los campos del formulario
-//     // console.log(elementos)
-
-//   for (let elemento of elementos) {
-//     if (elemento.name) {
-//       datosFormulario[elemento.name] = elemento.value;
-//     }
-//   }
-//   console.log(datosFormulario);
-//   // Voy a dar una respuesta al usuario con los datos que ingresó en el formulario usando el área del iframe
-//   const iframe = document.getElementById("iframe"); //Capturo el elemento iframe
-//   const salida = document.getElementById("salida");
-//   salida.textContent = "LOS DATOS INGRESADOS EN EL FORMULARIO SON:";
-//   iframe.classList.add("borroiframe"); //Le cambio la clase y lo borro con display: none
-// });
+const formulario = document.getElementById("formulario");
 
 // ******************USO DE FORMDATA**************************************************************************
 // Funciona OK el input radius, pero en el checkbox (si hay más de uno seleccionado), siempre recuerda el de más a la derecha
@@ -125,7 +62,7 @@ formulario.addEventListener("submit", (evento) => {
   // Crear un objeto para almacenar los valores
   const datosFormulario = {};
 
-  // Usar FormData para extraer los valoresgit log
+  // Usar FormData para extraer los valores
 
   const formData = new FormData(formulario);
   formData.forEach((valor, clave) => {
@@ -141,10 +78,10 @@ formulario.addEventListener("submit", (evento) => {
   iframe.classList.add("borroiframe"); //Le cambio la clase y lo borro con display: none
 
   // **************************Voy a imprimir los valores del objeto*************************************
-  
+
   // Crear un nuevo contenedor para mostrar los resultados del objeto
   let nuevoContenedor = document.getElementById("resultados");
-  console.log(nuevoContenedor)
+  console.log(nuevoContenedor);
 
   // Si el contenedor no existe, crearlo dinámicamente
   if (!nuevoContenedor) {
@@ -157,17 +94,27 @@ formulario.addEventListener("submit", (evento) => {
   // Limpiar el contenedor antes de agregar nuevos resultados
   nuevoContenedor.innerHTML = "";
 
-  // Crear un título para los resultados
-  // const titulo = document.createElement("h3");
-  // titulo.textContent = "Resultados del formulario:";
-  // nuevoContenedor.appendChild(titulo);
-
   // Recorre los campos del objeto y los agrega al nuevo contenedor
   for (const clave in datosFormulario) {
     if (datosFormulario.hasOwnProperty(clave)) {
+      const br = document.createElement("br"); //dejo un renglón entre cada par clave --> valor
+      nuevoContenedor.appendChild(br);
       const parrafo = document.createElement("p");
       parrafo.textContent = `${clave}: ${datosFormulario[clave]}`;
       nuevoContenedor.appendChild(parrafo);
     }
   }
+
+  // Agregar nuevos objetos al array
+  personas.push(datosFormulario);
+  console.log(personas);
+
+  // Guardar el array actualizado en el localStorage
+  localStorage.setItem("miArray", JSON.stringify(personas));
+
+  // Verificar los datos almacenados
+  console.log(
+    "Datos almacenados:",
+    JSON.parse(localStorage.getItem("miArray"))
+  );
 });

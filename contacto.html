@@ -30,7 +30,7 @@
       <div class="formulario">
         <h2>Formulario de contacto</h2>
 
-        <form id="formulario1" action="form.html" method="get" target="_blank">
+        <form id="formulario" action="form.html" method="get" target="_blank">
           <label for="name">Nombre</label>
           <input
             id="name"
@@ -97,8 +97,8 @@
           <!-- Input de tipo checkbox y de tipo radio. En ambos notar la importancia del atributo name. Sobretodo se nota en el input de tipo radio, si no se pone el mismo name a todo, de todos los circulitos no se puede seleccionar uno solo. Siempre hay que agrupar por temática.-->
 
           <h2 id="Comp">Elegí la marca de tu Computadora</h2>
-
-          <!-- El chequeo de que al menos una opción esté marcada se hará más adelante con javascript -->
+          
+          <!-- Input de tipo radio para seleccionar la marca-->
 
           <input id="opcion1" type="radio" value="DELL" name="marca" />DELL
           <input id="opcion2" type="radio" value="HP" name="marca" />HP
@@ -108,7 +108,7 @@
 
           <br />
 
-          <!-- Input de tipo radio -->
+          <!-- Input de tipo radio para seleccionar la cantidad de RAM-->
 
           <h2>Elegí cuánta memoria RAM le agregás</h2>
 
@@ -169,8 +169,8 @@
         ></iframe>
         <div id="resultados" style="word-wrap: break-word"></div>
       </div>
-    </main>q
-
+    </main>
+    
     <!-- Fin de página FOOTER insertado mediante fetch-->
 
     <div id="footer"></div>
@@ -183,7 +183,7 @@
         });
     </script>
 
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>
