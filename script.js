@@ -1,120 +1,97 @@
 // Captura de los input del formulario de contacto
-const inputName = document.getElementById("name"); //Capturo Nombre
-const inputLastname = document.getElementById("lastname"); //Capturo Apellido
-const inputEmail = document.getElementById("email"); //Capturo Email
-const inputTelefono = document.getElementById("telefono"); //Capturo Teléfono
-const inputDate = document.getElementById("date"); //Capturo fecha
-const inputSelect = document.getElementById("select"); //Capturo opción del select(Masculino, Femenino, Binario, Prefiero no decirlo)
+const inputName = document.getElementById("name");
+const inputLastname = document.getElementById("lastname");
+const inputEmail = document.getElementById("email");
+const inputTelefono = document.getElementById("telefono");
+const inputDate = document.getElementById("date");
+const inputSelect = document.getElementById("select");
 
-//Muestro en consola las capturas de los elemntos
-console.log(inputName);
-console.log(inputLastname);
-console.log(inputEmail);
-console.log(inputTelefono);
-console.log(inputDate);
-console.log(inputSelect);
+// Muestro en consola las capturas de los elementos de una forma más abreviada!
+console.log(inputName, inputLastname, inputEmail, inputTelefono, inputDate, inputSelect);
 
-// Manejo de los inputs type radio
-const checkboxOpcion1 = document.getElementById("opcion1"); //DELL
-const checkboxOpcion2 = document.getElementById("opcion2"); //HP
-const checkboxOpcion3 = document.getElementById("opcion3"); //LENOVO
-const checkboxOpcion4 = document.getElementById("opcion4"); //APPLE
-const checkboxOpcion5 = document.getElementById("opcion5"); //ASUS
+// Manejo de los inputs tipo readio
+const opcion1 = document.getElementById("opcion1");
+const opcion2 = document.getElementById("opcion2");
+const opcion3 = document.getElementById("opcion3");
+const opcion4 = document.getElementById("opcion4");
+const opcion5 = document.getElementById("opcion5");
 
-// Muestro en consola las capturas de los checkboxs
-console.log(checkboxOpcion1);
-console.log(checkboxOpcion2);
-console.log(checkboxOpcion3);
-console.log(checkboxOpcion4);
-console.log(checkboxOpcion5);
+// Muestro en consola las capturas de los checkboxes
+console.log(opcion1, opcion2, opcion3, opcion4, opcion5);
 
-//Manejo de los inputs type radius
+// Manejo de los inputs tipo radio
 const input4GB = document.getElementById("4GB");
 const input8GB = document.getElementById("8GB");
 const input16GB = document.getElementById("16GB");
 const input32GB = document.getElementById("32GB");
 const input64GB = document.getElementById("64GB");
 
-// Muestro en consola las capturas de los radius
-console.log(input4GB);
-console.log(input8GB);
-console.log(input16GB);
-console.log(input32GB);
-console.log(input64GB);
+// Muestro en consola las capturas de los radios
+console.log(input4GB, input8GB, input16GB, input32GB, input64GB);
 
-//Captura de text area
+// Captura del text area
 const textArea = document.getElementById("message");
 console.log(textArea);
 
-// Ahora voy a capturar en un objeto todos los valores del formulario. Para ello es que están definidos los atributos de name, ya que ahí viajarán dichos (bajo la variable name), con los valores que se ingresen en los inputs y que serán las claves o los atributos del objeto a crear. Por ejemplo el campo nombre del formulario, el name se llama name, por lo tante el primer par clave(atributo)-valor del objeto que se genere será: name: Carlos (por ejemplo). Luego el campo Apellido, el name es lastname, por lo tanto este segundo atributo del objeto será el par clave-valor dado por lastname: López (por ejemplo). Lo importante es que siempre para que el valor se capture debe haber un atributo llamado "name" en el input, de lo contrario no se capturará dicho elemento.
+// Inicializa el array con datos del localStorage
+let personas = JSON.parse(localStorage.getItem("arrayPersonas")) || [];
 
-let personas = []; //Preparo un array vacío donde vamos a almacenar los objetos
-
-// const inputSubmit = document.getElementById("submit");
+// Captura del formulario
 const formulario = document.getElementById("formulario");
 
-// ******************USO DE FORMDATA**************************************************************************
-// Funciona OK el input radius, pero en el checkbox (si hay más de uno seleccionado), siempre recuerda el de más a la derecha
+// Manejo del evento submit
 formulario.addEventListener("submit", (evento) => {
+  console.log("El objeto evento es: ", evento);
   // Evitar el envío tradicional del formulario
   evento.preventDefault();
 
-  // Crear un objeto para almacenar los valores
+  // Creo un objeto para almacenar los valores y lo inicializo vacío
   const datosFormulario = {};
 
-  // Usar FormData para extraer los valores
-
+  // Uso FormData para extraer los valores del formulario
   const formData = new FormData(formulario);
+  console.log(formData); // Este objeto tiene el método forEach que uso en la siguiente línea
   formData.forEach((valor, clave) => {
-    datosFormulario[clave] = valor;
+    datosFormulario[clave] = valor || "No especificado"; // Agrego un valor predeterminado ("No especificado") si algún campo está vacío.
   });
 
-  // Mostrar el objeto con los datos
-  console.log(datosFormulario);
-  // Voy a dar una respuesta al usuario con los datos que ingresó en el formulario usando el área del iframe
-  const iframe = document.getElementById("iframe"); //Capturo el elemento iframe
-  const salida = document.getElementById("salida"); //salida es la clase que le di al h2 del contenedor
-  salida.textContent = "LOS DATOS INGRESADOS EN EL FORMULARIO SON:";
-  iframe.classList.add("borroiframe"); //Le cambio la clase y lo borro con display: none
+  console.log("Los datos del formulario son: ", datosFormulario);
 
-  // **************************Voy a imprimir los valores del objeto*************************************
+  // Mostrar los datos ingresados al usuari, pero en el HTML. El div elegido es donde inicialmente está el iframe, por lo tanto lo primero que debemos hacer es borrarlo, y apara ello le alteramos una de las clases.
+  const iframe = document.getElementById("iframe");
+  const salida = document.getElementById("salida"); // Capturo el h2 que inicialmente dice "ENCUÉNTRANOS EN ESTA DIRECCIÓN"
+  salida.textContent = "LOS DATOS INGRESADOS EN EL FORMULARIO SON:"; // Le cambio el texto, cuando se presiona submit (botón Enviar)
+  iframe.classList.add("borroiframe"); // Le altero la clase borrando el iframe con display: none, para en ese lugar mostrar los datos del formulario!
 
-  // Crear un nuevo contenedor para mostrar los resultados del objeto
+  // Creamos un contenedor para mostrar los resultados con los datos que el usuario ingresó en el formulario
   let nuevoContenedor = document.getElementById("resultados");
-  console.log(nuevoContenedor);
-
-  // Si el contenedor no existe, crearlo dinámicamente
   if (!nuevoContenedor) {
-    nuevoContenedor = document.createElement("div");
-    nuevoContenedor.id = "contenedor-resultados";
-    nuevoContenedor.style.marginTop = "20px"; // Agrega estilo opcional
-    document.body.appendChild(nuevoContenedor); // Lo agrega al final del <body>
+    nuevoContenedor = document.createElement("div"); // Creo el nuevo contenedor
+    nuevoContenedor.id = "resultados"; // A este nuevo contenedor que creo le asigno el id resultados, si es que no existe !!
+    document.body.appendChild(nuevoContenedor);
   }
 
-  // Limpiar el contenedor antes de agregar nuevos resultados
+  // Limpiamos el contenedor antes de agregar nuevos resultados
   nuevoContenedor.innerHTML = "";
 
-  // Recorre los campos del objeto y los agrega al nuevo contenedor
+  // Agregamos los valores del objeto con los datos del formulario capturados a este nuevo contenedor
   for (const clave in datosFormulario) {
     if (datosFormulario.hasOwnProperty(clave)) {
-      const br = document.createElement("br"); //dejo un renglón entre cada par clave --> valor
-      nuevoContenedor.appendChild(br);
+      const br = document.createElement("br")
+      nuevoContenedor.appendChild(br)// Agrego un renglón entre cada campo del formulario
       const parrafo = document.createElement("p");
       parrafo.textContent = `${clave}: ${datosFormulario[clave]}`;
       nuevoContenedor.appendChild(parrafo);
     }
   }
 
-  // Agregar nuevos objetos al array
+  // Agregamos el objeto al array personas y guardamos los datos en el localStorage
   personas.push(datosFormulario);
-  console.log(personas);
+  localStorage.setItem("arrayPersonas", JSON.stringify(personas));
 
-  // Guardar el array actualizado en el localStorage
-  localStorage.setItem("miArray", JSON.stringify(personas));
-
-  // Verificar los datos almacenados
+  // Mostrar en consola los datos almacenados
   console.log(
     "Datos almacenados:",
-    JSON.parse(localStorage.getItem("miArray"))
+    JSON.parse(localStorage.getItem("arrayPersonas"))
   );
 });
