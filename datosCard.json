@@ -3,16 +3,15 @@
     "id": 1,
     "img1": "./images/Dell.png",
     "h2": "Netbook DELL",
-    "p": "el loco de todos!",
+    "p": "Control the charging time, duration, start and end time, and so on using the Dell Power Manager application. For more information on the Dell Power Manager see, Me and My Dell on www.dell.com.",
     "img2": "./images/crucero.png",
-    "h3":"hola qué tal nene"
-  },
+    "h3": "3500 U$S"},
   {
     "id": 2,
-    "img1": "./images/cliente_1.png",
-    "h2": "Netbook DELL",
-    "p": "el loco de todos!",
-    "img2": "./images/crucero.png",
-    "h3": "hola qué tal nene"
+    "img1": "./images/Notebook_HP.png",
+    "h2": "HP Proliant",
+    "p": "Notebook HP 14-ep1002la, Windows 11 Home Single Language, 14, Intel® Core™ Ultra 5, 8GB RAM, 512GB SSD, FHD",
+    "img2": "./images/img2_card.jpg",
+    "h3": "3900 €"
   }
 ]
